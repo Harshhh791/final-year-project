@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Predictor | Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Full-Page Background Image */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar */
+.navbar {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #f8f9fa;
+    font-size: 22px;
+}
+
+.navbar-nav .nav-link {
+    color: #f8f9fa !important;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f98c1e !important;
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    height: 100vh;
+    background: url("{{ url_for('static', filename='img1.png') }}") no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    position: relative;
+}
+
+/* Overlay for better text readability */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+.hero-content {
+    max-width: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 55px;
+    font-weight: bold;
+    color: #f98c1e;
+}
+
+.hero p {
+    font-size: 24px;
+    color: white; /* Improved readability */
+    font-weight: 500;
+}
+
+/* Button Styling */
+.btn-primary {
+    display: inline-block;
+    background: #f98c1e;
+    border: none;
+    font-size: 22px;
+    padding: 15px 30px;
+    transition: all 0.3s ease-in-out;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background: #d97706;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Full-Screen Image Sections */
+.full-screen-img {
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh; /* Ensures full height on all devices */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Specific Backgrounds for Sections */
+#img2 { background: url("{{ url_for('static', filename='img2.png') }}") no-repeat center center/cover; }
+#img3 { background: url("{{ url_for('static', filename='img3.png') }}") no-repeat center center/cover; }
+#img4 { background: url("{{ url_for('static', filename='img4.png') }}") no-repeat center center/cover; }
+#img5 { background: url("{{ url_for('static', filename='img5.png') }}") no-repeat center center/cover; }
+
+/* Footer */
+.footer {
+    background: #f8f9fa;
+    color: #000;
+    padding: 40px 10px;
+}
+
+.footer h5 {
+    font-weight: bold;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #333;
+}
+
+.footer a:hover {
+    color: #f98c1e;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .hero-content {
+        max-width: 90%;
+    }
+
+    .full-screen-img {
+        height: 50vh; /* Reduce height for smaller screens */
+    }
+}
+
+        /* Footer */
+        .footer {
+            background: #f8f9fa;
+            color: #000;
+            padding: 40px 10px;
+            
+        }
+
+        .footer h5 {
+            font-weight: bold;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .footer a:hover {
+            color: #f98c1e;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+   <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <i class="fas fa-graduation-cap"></i> Scholarship Predictor
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="prediction.html">Prediction</a></li>
+					<li class="nav-item"><a class="nav-link" href="faq.html">FAQs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="scholarships.html">Scholarships</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Scholarship Predictor</h1>
+            <p>Find out your chances of winning a scholarship based on key academic and extracurricular factors.</p>
+            <a href="prediction.html" class="btn btn-primary mt-3"><i class="fas fa-magic"></i> Get Started</a>
+        </div>
+    </div>
+
+    <!-- Full-Screen Images Below -->
+    <img src="{{ url_for('static', filename='img2.png') }}" style="width: 100%; height: auto;">
+	<img src="{{ url_for('static', filename='img3.png') }}" style="width: 100%; height: auto;">
+	<img src="{{ url_for('static', filename='img4.png') }}" style="width: 100%; height: auto;">
+	<img src="{{ url_for('static', filename='img5.png') }}" style="width: 100%; height: auto;">
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Company</h5>
+                    <a href="about.html">About Us</a><br>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+                <div class="col-md-4">
+                    <h5>Resources</h5>
+                    <a href="faq.html">FAQs</a>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <a href="signup.html">Sign Up</a><br>
+                    <a href="scholarships.html">Scholarships</a><br>
+                    <a href="predict.html">Predict</a>
+                </div>
+            </div>
+            <div class="footer-bottom text-center mt-3">
+                &copy; 2025 Scholarship Predictor | All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

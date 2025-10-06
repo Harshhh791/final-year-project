@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Predictor</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            background: url('https://source.unsplash.com/1600x900/?education,books') no-repeat center center/cover;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+        }
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.8);;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: #f8f9fa;
+            font-size: 22px;
+        }
+
+        .navbar-nav {
+            margin-left: auto;
+        }
+
+        .navbar-nav .nav-item {
+            padding: 0px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #f8f9fa !important;
+            font-size: 18px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+            color: #f98c1e !important;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            max-width: 85%;
+            margin: auto;
+            margin-top: 100px;
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            text-align: center;
+            font-weight: bold;
+            color: #f98c1e;
+        }
+
+        .form-control {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #f98c1e;
+            color: white;
+        }
+
+        select option {
+            background: black;
+            color: white;
+        }
+
+        .btn-primary {
+            background: #f98c1e;
+            border: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #f98c1e;
+        }
+
+        .prediction {
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #45de69;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #f8f9fa;
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-graduation-cap"></i> Scholarship Predictor
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="prediction.html">Prediction</a></li>
+					<li class="nav-item"><a class="nav-link" href="faq.html">FAQs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="scholarships.html">Scholarships</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+	
+    <div class="container">
+    <h2><i class="fas fa-chart-line"></i>Scholarship Predictor</h2>
+    <form action="/predict" method="post">
+        <label for="GP">GPA(out of 10):</label>
+            <input type="number" id="GPA" class="form-control" name="GPA" step="0.01" min="1" max="10" required>
+            
+            <label for="10th_Percentage">10th Percentage:</label>
+            <input type="number" id="10th_Percentage" class="form-control" name="10th Percentage" min="1" max="100" step="0.01" required>
+            
+            <label for="12th_Percentage">12th Percentage:</label>
+            <input type="number" id="12th_Percentage" class="form-control" name="12th Percentage" min="1" max="100" step="0.01" required>
+
+            <label for="Family_Income">Family Income(In INR):</label>
+            <input type="number" id="Family_Income" class="form-control" name="Family Income" step="0.01" required>
+
+			<label for="extracurricular">Extracurricular Activities:</label>
+			<select id="extracurricular" class="form-control" name="Extracurricular Activities" required>
+			<option value="" disabled selected></option>
+				<option value="low">Low(1-2)</option>
+				<option value="medium">Medium(2-3)</option>
+				<option value="high">High(3+)</option>
+			</select>
+
+        <label for="essay_quality">Essay Quality:</label>
+        <select id="essay_quality" class="form-control" name="Essay Quality" required>
+			<option value="" disabled selected></option>
+            <option value="poor">Poor</option>
+            <option value="fair">Fair</option>
+            <option value="good">Good</option>
+            <option value="excellent">Excellent</option>
+        </select>
+
+        <label for="recommendation">Letters of Recommendation:</label>
+        <select id="recommendation" class="form-control" name="Letters of Recommendation" required>
+			<option value="" disabled selected></option>
+            <option value="weak">Weak</option>
+            <option value="moderate">Moderate</option>
+            <option value="strong">Strong</option>
+        </select>
+
+        <label for="financial_need">Financial Need:</label>
+        <select id="financial_need" class="form-control" name="Financial Need" required>
+			<option value="" disabled selected></option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+
+        <label for="major">Major:</label>
+        <select id="major" class="form-control" name="Major" required>
+			<option value="" disabled selected></option>
+            <option value="Engineering">Engineering</option>
+            <option value="Medicine">Medicine</option>
+            <option value="Arts">Arts</option>
+            <option value="Science">Science</option>
+            <option value="Business">Business</option>
+        </select>
+
+        <label for="state_of_residence">State of Residence:</label>
+        <select id="state_of_residence" class="form-control" name="State of Residence" required>
+			<option value="" disabled selected></option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Kerala">Kerala</option>
+        </select>
+
+        <label for="leadership_experience">Leadership Experience:</label>
+        <select id="leadership_experience" class="form-control" name="Leadership Experience" required>
+			<option value="" disabled selected></option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="volunteer_work">Volunteer Work:</label>
+        <select id="volunteer_work" class="form-control" name="Volunteer Work" required>
+			<option value="" disabled selected></option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="work_experience">Work Experience:</label>
+        <select id="work_experience" class="form-control" name="Work Experience" required>
+			<option value="" disabled selected></option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="family_background">Family Background:</label>
+        <select id="family_background"class="form-control" name="Family Background" required>
+			<option value="" disabled selected></option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+
+        <button type="submit" class="btn btn-primary w-100 mt-3" value="Predict">
+                <i class="fas fa-magic"></i> Predict Now
+            </button>
+    </form>
+    {% if prediction %}
+    <div class="prediction">
+            <h3><i class="fas fa-award"></i> Scholarship Prediction: {{ prediction }}</h3>
+        </div>
+    {% endif %}
+</div>
+<!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Company</h5>
+                    <a href="about.html">About Us</a><br>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+                <div class="col-md-4">
+                    <h5>Resources</h5>
+                    <a href="faq.html">FAQs</a>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <a href="signup.html">Sign Up</a><br>
+                    <a href="scholarships.html">Scholarships</a><br>
+                    <a href="predict.html">Predict</a>
+                </div>
+            </div>
+            <div class="footer-bottom text-center mt-3">
+                &copy; 2025 Scholarship Predictor | All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

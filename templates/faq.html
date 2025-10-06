@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs | Scholarship Predictor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Background with Blur Effect */
+        body {
+            background: url('https://source.unsplash.com/1600x900/?education,learning') no-repeat center center/cover;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(0, 0, 0, 0.8);;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: #f8f9fa;
+            font-size: 22px;
+        }
+
+        .navbar-nav {
+            margin-left: auto;
+        }
+
+        .navbar-nav .nav-item {
+            padding: 0px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #f8f9fa !important;
+            font-size: 18px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+            color: #f98c1e !important;
+        }
+
+        /* Container */
+        .faq-container, .contact-container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            max-width: 85%;
+            margin: auto;
+            margin-top: 100px;
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            color: #f98c1e;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-item h4 {
+            color: #f98c1e;
+        }
+
+        /* Contact Form */
+        .form-control {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .btn-submit {
+            background: #f98c1e;
+            color: black;
+            border: none;
+            font-size: 18px;
+            padding: 12px;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background: #f98c1e;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #f8f9fa;
+            font-size: 14px;
+        }
+
+        .footer img {
+            height: 40px;
+            display: block;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-graduation-cap"></i>
+                Scholarship Predictor
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="prediction.html">Prediction</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQs</a></li>
+					<li class="nav-item"><a class="nav-link" href="scholarships.html">Scholarships</a></li>
+					<li class="nav-item"><a class="nav-link" href="login.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FAQ Section -->
+    <div class="container">
+        <div class="faq-container">
+            <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h4>🎓 How does the Scholarship Predictor work?</h4>
+                <p>We use machine learning algorithms to analyze various factors such as GPA, extracurricular activities, and financial need to estimate scholarship eligibility.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>💰 Is the prediction 100% accurate?</h4>
+                <p>No prediction is perfect, but our model provides a reliable estimation based on available data and trends.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>📜 What factors influence the prediction?</h4>
+                <p>The main factors include GPA, exam scores, financial background, extracurricular activities, leadership experience, and recommendation letters.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Us Section -->
+    <div class="container">
+        <div class="contact-container">
+            <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+            <form action="contact_form.php" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Your Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Your Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Company</h5>
+                    <a href="about.html">About Us</a><br>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+                <div class="col-md-4">
+                    <h5>Resources</h5>
+                    <a href="faq.html">FAQs</a>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <a href="signup.html">Sign Up</a><br>
+                    <a href="scholarships.html">Scholarships</a><br>
+                    <a href="predict.html">Predict</a>
+                </div>
+            </div>
+            <div class="footer-bottom text-center mt-3">
+                &copy; 2025 Scholarship Predictor | All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

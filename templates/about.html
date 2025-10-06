@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Predictor | About</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Background with Blur Effect */
+        body {
+            background: url('https://source.unsplash.com/1600x900/?university,students') no-repeat center center/cover;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background: rgba(0, 0, 0, 0.8);;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: #f8f9fa;
+            font-size: 22px;
+        }
+
+        .navbar-nav {
+            margin-left: auto;
+        }
+
+        .navbar-nav .nav-item {
+            padding: 0px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #f8f9fa !important;
+            font-size: 18px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+            color: #f98c1e !important;
+        }
+
+        /* About Section */
+			.about-container {
+			max-width: 800px;
+			margin: auto; /* Centers horizontally */
+			padding: 30px;
+			background: rgba(0, 0, 0, 0.7);
+			backdrop-filter: blur(10px);
+			border-radius: 15px;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+			text-align: center;
+			margin-top:100px;
+		}
+		.social-container {
+			max-width: 800px; /* Set uniform width */
+			margin: 20px auto; /* Center the block */
+			padding: 20px;
+			background: rgba(0, 0, 0, 0.7);
+			backdrop-filter: blur(10px);
+			border-radius: 12px;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+			text-align: center;
+		}
+		.social-buttons {
+			display: flex;
+			justify-content: center;
+			gap: 10px; /* Adds space between buttons */
+			margin-top: 15px;
+		}
+		/* Center align Rate Prediction Accuracy block */
+		.rating-container {
+			max-width: 800px; /* Set uniform width */
+			margin: 20px auto; /* Center the block */
+			padding: 20px;
+			background: rgba(0, 0, 0, 0.7);
+			backdrop-filter: blur(10px);
+			border-radius: 12px;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+			text-align: center;
+		}
+
+		/* Center align stars */
+		.stars {
+			display: flex;
+			justify-content: center;
+			gap: 8px;
+			margin-top: 10px;
+		}
+
+
+        .about-container h2 {
+            color: #f98c1e;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .about-container p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Social Media Sharing */
+        .social-sharing {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .social-sharing a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .whatsapp {
+            background: #25D366;
+        }
+
+        .twitter {
+            background: #1DA1F2;
+        }
+
+        .social-sharing a:hover {
+            opacity: 0.8;
+        }
+
+        /* Upcoming Scholarships */
+        .scholarship-section {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .scholarship-section h2 {
+            color: #f98c1e;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .scholarship-item {
+            padding: 15px;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Rating System */
+        .rating {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .rating i {
+            font-size: 30px;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .rating i.active {
+            color: #f98c1e;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #f8f9fa;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <i class="fas fa-graduation-cap"></i> Scholarship Predictor
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="prediction.html">Prediction</a></li>
+					<li class="nav-item"><a class="nav-link" href="faq.html">FAQs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="scholarships.html">Scholarships</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- About Section -->
+    <div class="container">
+        <div class="about-container">
+            <h2><i class="fas fa-info-circle"></i> About Scholarship Predictor</h2>
+            <p>This platform helps students predict their chances of getting a scholarship based on academic performance, extracurricular activities, and financial need.</p>
+            <p>Using <strong>Machine Learning</strong>, we analyze various factors to provide an accurate estimation.</p>
+        </div>
+    </div>
+
+    <!-- Social Media Sharing -->
+    <div class="container">
+    <div class="social-container">
+        <h2>📢 Share Your Prediction</h2>
+        <div class="social-buttons">
+            <a href="https://wa.me/?text=Check+out+my+scholarship+prediction!" class="btn btn-success">
+                <i class="fab fa-whatsapp"></i> Share on WhatsApp
+            </a>
+            <a href="https://twitter.com/intent/tweet?text=Check+out+my+scholarship+prediction!" class="btn btn-primary">
+                <i class="fab fa-twitter"></i> Share on Twitter
+            </a>
+        </div>
+    </div>
+</div>
+
+    <!-- User Rating -->
+    <div class="container">
+    <div class="rating-container">
+        <h2>⭐ <span style="color: #f98c1e;">Rate Prediction Accuracy</span></h2>
+        <div class="stars">
+            <i class="fa fa-star" style="color: #ccc; font-size: 24px;"></i>
+            <i class="fa fa-star" style="color: #ccc; font-size: 24px;"></i>
+            <i class="fa fa-star" style="color: #ccc; font-size: 24px;"></i>
+            <i class="fa fa-star" style="color: #ccc; font-size: 24px;"></i>
+            <i class="fa fa-star" style="color: #ccc; font-size: 24px;"></i>
+        </div>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Company</h5>
+                    <a href="about.html">About Us</a><br>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+                <div class="col-md-4">
+                    <h5>Resources</h5>
+                    <a href="faq.html">FAQs</a>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <a href="signup.html">Sign Up</a><br>
+                    <a href="scholarships.html">Scholarships</a><br>
+                    <a href="predict.html">Predict</a>
+                </div>
+            </div>
+            <div class="footer-bottom text-center mt-3">
+                &copy; 2025 Scholarship Predictor | All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function rate(stars) {
+            let starsList = document.querySelectorAll(".rating i");
+            starsList.forEach((star, index) => {
+                star.classList.toggle("active", index < stars);
+            });
+            document.getElementById("rating-msg").innerText = `You rated ${stars} stars!`;
+        }
+    </script>
+
+</body>
+</html> 
