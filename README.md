@@ -104,5 +104,3 @@ Traditional evaluations often depend on subjective judgment — this system intr
 Harsh Jethwa
 🎓 Bachelor of Science in Information Technology
 📍 Narsee Monjee College of Commerce and Economics
-📧 [harsh@example.com
-] (replace with your actual email if desired)
